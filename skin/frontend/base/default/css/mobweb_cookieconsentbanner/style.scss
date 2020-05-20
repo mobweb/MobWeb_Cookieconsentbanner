@@ -12,6 +12,8 @@
     padding: 2em;
     text-align: center;
     background: white;
+    z-index: 999;
+    border-top: 1px solid black;
 
     .intro {
         margin-bottom: 1em;
