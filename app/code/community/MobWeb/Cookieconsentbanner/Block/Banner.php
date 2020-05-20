@@ -73,11 +73,11 @@ class MobWeb_Cookieconsentbanner_Block_Banner extends Mage_Core_Block_Template
     public function getCheckboxes(): Array
     {
         if (!$this->_checkBoxes) {
-            $this->_checkboxes = array();
-            
+            $checkboxes = array();
+
             $checkboxEssentialLabel = $this->_helper->getConfigData('checkbox_essential_label');
             if ($checkboxEssentialLabel) {
-                $this->_checkboxes[] = array(
+                $checkboxes[] = array(
                     'id' => MobWeb_Cookieconsentbanner_Helper_Data::ALLOW_COOKIES_ESSENTIAL_NAME,
                     'label' => $checkboxEssentialLabel,
                     'checked' => true,
@@ -87,7 +87,7 @@ class MobWeb_Cookieconsentbanner_Block_Banner extends Mage_Core_Block_Template
 
             $checkboxCustom1Label = $this->_helper->getConfigData('checkbox_custom_1_label');
             if ($checkboxCustom1Label) {
-                $this->_checkboxes[] = array(
+                $checkboxes[] = array(
                     'id' => MobWeb_Cookieconsentbanner_Helper_Data::ALLOW_COOKIES_CUSTOM_1_NAME,
                     'label' => $checkboxCustom1Label,
                     'checked' => false,
@@ -97,13 +97,15 @@ class MobWeb_Cookieconsentbanner_Block_Banner extends Mage_Core_Block_Template
 
             $checkboxCustom2Label = $this->_helper->getConfigData('checkbox_custom_2_label');
             if ($checkboxCustom2Label) {
-                $this->_checkboxes[] = array(
+                $checkboxes[] = array(
                     'id' => MobWeb_Cookieconsentbanner_Helper_Data::ALLOW_COOKIES_CUSTOM_2_NAME,
                     'label' => $checkboxCustom2Label,
                     'checked' => false,
                     'disabled' => false,
                 );
             }
+
+            $this->_checkboxes = $checkboxes;
         }
 
         return $this->_checkboxes;
