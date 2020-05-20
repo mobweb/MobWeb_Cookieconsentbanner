@@ -39,15 +39,11 @@ if ($this->canShowBanner()) {?>
             <a href="#" onclick="mccbAcceptEssential(); return false" class="button-accept-essential" title="<?php echo $this->getButtonAcceptEssentialLabel(); ?>">
                 <?php echo $this->getButtonAcceptEssentialLabel(); ?>
             </a>
-            <?php foreach ($this->getCustomLinks() as $customLink) {
-                $url = $customLink['url'];
-                $label = $customLink['label'];
-                if ($url && $label) { ?>
-                    <a href="<?php echo $url; ?>" class="custom-link" title="<?php echo $customLink['label']; ?>"><?php echo $label; ?></a>
-                    <span class="separator">
-                        |
-                    </span>
-                <?php } ?>
+            <?php foreach ($this->getCustomLinks() as $customLink) { ?>
+                <a href="<?php echo $customLink['url']; ?>" class="custom-link" title="<?php echo $customLink['label']; ?>"><?php echo $customLink['label']; ?></a>
+                <span class="separator">
+                    |
+                </span>
             <?php } ?>
         </div>
     </form>

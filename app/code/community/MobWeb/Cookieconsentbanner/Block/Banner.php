@@ -73,26 +73,37 @@ class MobWeb_Cookieconsentbanner_Block_Banner extends Mage_Core_Block_Template
     public function getCheckboxes(): Array
     {
         if (!$this->_checkBoxes) {
-            $this->_checkboxes = array(
-                array(
+            $this->_checkboxes = array();
+            
+            $checkboxEssentialLabel = $this->_helper->getConfigData('checkbox_essential_label');
+            if ($checkboxEssentialLabel) {
+                $this->_checkboxes[] = array(
                     'id' => MobWeb_Cookieconsentbanner_Helper_Data::ALLOW_COOKIES_ESSENTIAL_NAME,
-                    'label' => $this->_helper->getConfigData('checkbox_essential_label'),
+                    'label' => $checkboxEssentialLabel,
                     'checked' => true,
                     'disabled' => true
-                ),
-                array(
+                );
+            }
+
+            $checkboxCustom1Label = $this->_helper->getConfigData('checkbox_custom_1_label');
+            if ($checkboxCustom1Label) {
+                $this->_checkboxes[] = array(
                     'id' => MobWeb_Cookieconsentbanner_Helper_Data::ALLOW_COOKIES_CUSTOM_1_NAME,
-                    'label' => $this->_helper->getConfigData('checkbox_custom_1_label'),
+                    'label' => $checkboxCustom1Label,
                     'checked' => false,
                     'disabled' => false,
-                ),
-                array(
+                );
+            }
+
+            $checkboxCustom2Label = $this->_helper->getConfigData('checkbox_custom_2_label');
+            if ($checkboxCustom2Label) {
+                $this->_checkboxes[] = array(
                     'id' => MobWeb_Cookieconsentbanner_Helper_Data::ALLOW_COOKIES_CUSTOM_2_NAME,
-                    'label' => $this->_helper->getConfigData('checkbox_custom_2_label'),
+                    'label' => $checkboxCustom2Label,
                     'checked' => false,
                     'disabled' => false,
-                )
-            );
+                );
+            }
         }
 
         return $this->_checkboxes;
@@ -128,20 +139,17 @@ class MobWeb_Cookieconsentbanner_Block_Banner extends Mage_Core_Block_Template
     public function getCustomLinks(): Array
     {
         if (!$this->_customLinks) {
-            $this->_customLinks = array(
-                array(
-                    'label' => $this->_helper->getConfigData('custom_link_1_label'),
-                    'url' => $this->_helper->getConfigData('custom_link_1_url')
-                ),
-                array(
-                    'label' => $this->_helper->getConfigData('custom_link_2_label'),
-                    'url' => $this->_helper->getConfigData('custom_link_2_url')
-                ),
-                array(
-                    'label' => $this->_helper->getConfigData('custom_link_3_label'),
-                    'url' => $this->_helper->getConfigData('custom_link_3_url')
-                ),
-            );
+            $this->_customLinks = array();
+            for ($i = 0 ; $i < 10; $i++) {
+                $label = $this->_helper->getConfigData('custom_link_' . $i . '_label');
+                $url = $this->_helper->getConfigData('custom_link_' . $i . '_url');
+                if ($label && $url) {
+                    $this->_customLinks[] = array(
+                        'label' => $label,
+                        'url' => $url
+                    );
+                }
+            }
         }
 
         return $this->_customLinks;
