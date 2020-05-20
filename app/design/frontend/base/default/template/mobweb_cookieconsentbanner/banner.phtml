@@ -1,0 +1,54 @@
+<?php
+/**
+ * @author    Louis Bataillard <info@mobweb.ch>
+ * @package    MobWeb_Cookieconsentbanner
+ * @copyright    Copyright (c) MobWeb GmbH (https://mobweb.ch)
+ */
+
+if ($this->canShowBanner()) {?>
+    <form class="mobweb-cookie-consent-banner" id="mobweb-cookie-consent-banner" action="<?php echo $this->getPostUrl(); ?>" method="post">
+        <div class="intro">
+            <h1><?php echo $this->getIntroTitle(); ?></h1>
+            <p><?php echo $this->getIntroText(); ?></h1>
+        </div>
+        <ul class="form-list checkboxes">
+            <?php foreach ($this->getCheckboxes() as $checkbox) { ?>
+                <li class="control">
+                    <input type="checkbox" <?php echo $checkbox['checked'] ? 'checked' : ''; ?>  <?php echo $checkbox['disabled'] ? 'disabled' : ''; ?> name="allow_cookie[<?php echo $checkbox['id']; ?>]" id="<?php echo $checkbox['id']; ?>" title="<?php echo $checkbox['label']; ?>" class="checkbox">
+                    <label for="<?php echo $checkbox['id']; ?>">
+                        <?php echo $checkbox['label']; ?>
+                    </label>
+                </li>
+            <?php } ?>
+        </ul>
+        <div class="buttons">
+            <button type="button" title="<?php echo $this->getButtonAcceptAllLabel(); ?>" class="button button-accept-all" onclick="mccbAcceptAll()">
+                <span>
+                    <span>
+                        <?php echo $this->getButtonAcceptAllLabel(); ?>
+                    </span>
+                </span>
+            </button>
+            <button type="submit" title="<?php echo $this->getButtonSaveLabel(); ?>" class="button button-save">
+                <span>
+                    <span>
+                        <?php echo $this->getButtonSaveLabel(); ?>
+                    </span>
+                </span>
+            </button>
+            <a href="#" onclick="mccbAcceptEssential(); return false" class="button-accept-essential" title="<?php echo $this->getButtonAcceptEssentialLabel(); ?>">
+                <?php echo $this->getButtonAcceptEssentialLabel(); ?>
+            </a>
+            <?php foreach ($this->getCustomLinks() as $customLink) {
+                $url = $customLink['url'];
+                $label = $customLink['label'];
+                if ($url && $label) { ?>
+                    <a href="<?php echo $url; ?>" class="custom-link" title="<?php echo $customLink['label']; ?>"><?php echo $label; ?></a>
+                    <span class="separator">
+                        |
+                    </span>
+                <?php } ?>
+            <?php } ?>
+        </div>
+    </form>
+<?php } ?>

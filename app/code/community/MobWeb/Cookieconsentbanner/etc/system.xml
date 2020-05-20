@@ -1,0 +1,147 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @author    Louis Bataillard <info@mobweb.ch>
+ * @package    MobWeb_Cookieconsentbanner
+ * @copyright    Copyright (c) MobWeb GmbH (https://mobweb.ch)
+ */
+-->
+<config>
+    <sections>
+        <web>
+            <groups>
+                <mobweb_cookieconsentbanner module="mobweb_cookieconsentbanner">
+                    <label>Cookie Consent Banner</label>
+                    <expanded>1</expanded>
+                    <sort_order>200</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <enabled>
+                            <label>Enabled</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </enabled>
+                        <intro_title>
+                            <label>Intro title</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>2</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>   
+                        </intro_title>
+                        <intro_text>
+                            <label>Intro text</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>3</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>   
+                        </intro_text>
+                        <checkbox_essential_label>
+                            <label>Checkbox «Essential Cookies» label</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>4</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>   
+                        </checkbox_essential_label>
+                        <checkbox_custom_1_label>
+                            <label>Checkbox «Custom 1» label</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>5</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>   
+                        </checkbox_custom_1_label>
+                        <checkbox_custom_2_label>
+                            <label>Checkbox «Custom 2» label</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>6</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>   
+                        </checkbox_custom_2_label>
+                        <button_accept_all_label>
+                            <label>Button «Accept all» label</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>7</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>   
+                        </button_accept_all_label>
+                        <button_save_label>
+                            <label>Button «Save» label</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>8</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>   
+                        </button_save_label>
+                        <button_accept_essential_label>
+                            <label>Button «Accept essential» label</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>9</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>   
+                        </button_accept_essential_label>
+                        <custom_link_1_label>
+                            <label>Label for custom link 1</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>   
+                        </custom_link_1_label>
+                        <custom_link_1_url>
+                            <label>URL for custom link 1</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>11</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>   
+                        </custom_link_1_url>
+                        <custom_link_2_label>
+                            <label>Label for custom link 2</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>12</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>   
+                        </custom_link_2_label>
+                        <custom_link_2_url>
+                            <label>URL for custom link 2</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>13</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>   
+                        </custom_link_2_url>
+                        <custom_link_3_label>
+                            <label>Label for custom link 3</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>14</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>   
+                        </custom_link_3_label>
+                        <custom_link_3_url>
+                            <label>URL for custom link 3</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>15</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>   
+                        </custom_link_3_url>
+                    </fields>
+                </mobweb_cookieconsentbanner>
+            </groups>
+        </web>
+    </sections>
+</config>

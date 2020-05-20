@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @author    Louis Bataillard <info@mobweb.ch>
+ * @package    MobWeb_Cookieconsentbanner
+ * @copyright    Copyright (c) MobWeb GmbH (https://mobweb.ch)
+ */
+-->
+<config>
+    <modules>
+        <MobWeb_Cookieconsentbanner>
+            <active>true</active>
+            <codePool>community</codePool>
+        </MobWeb_Cookieconsentbanner>
+    </modules>
+</config>

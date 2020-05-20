@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @author    Louis Bataillard <info@mobweb.ch>
+ * @package    MobWeb_Cookieconsentbanner
+ * @copyright    Copyright (c) MobWeb GmbH (https://mobweb.ch)
+ */
+-->
+<layout version="0.0.1">
+    <default>
+        <reference name="head">
+            <action method="addItem">
+                <type>skin_css</type>
+                <name>css/mobweb_cookieconsentbanner/style.css</name>
+            </action>
+            <action method="addItem">
+                <type>skin_js</type>
+                <name>js/mobweb_cookieconsentbanner/script.js</name>
+            </action>
+        </reference>
+        <reference name="before_body_end">
+            <block type="mobweb_cookieconsentbanner/banner" name="mobweb_cookieconsentbanner_banner" template="mobweb_cookieconsentbanner/banner.phtml">
+                <action method="setBlockId"><block_id>mobweb_cookieconsentbanner_banner</block_id></action>
+            </block>
+        </reference>
+    </default>
+</layout>

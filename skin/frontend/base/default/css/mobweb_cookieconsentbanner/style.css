@@ -1,0 +1,29 @@
+/**
+ * @author    Louis Bataillard <info@mobweb.ch>
+ * @package    MobWeb_Cookieconsentbanner
+ * @copyright    Copyright (c) MobWeb GmbH (https://mobweb.ch)
+ */
+.mobweb-cookie-consent-banner {
+  display: block;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  padding: 2em;
+  background: white; }
+  .mobweb-cookie-consent-banner .intro {
+    margin-bottom: 1em; }
+    .mobweb-cookie-consent-banner .intro h1 {
+      margin-bottom: 1em; }
+  .mobweb-cookie-consent-banner .checkboxes {
+    margin-bottom: 1em; }
+    .mobweb-cookie-consent-banner .checkboxes li {
+      display: inline-block;
+      margin-right: 1em; }
+  .mobweb-cookie-consent-banner .buttons a {
+    display: block;
+    margin: 1em; }
+    .mobweb-cookie-consent-banner .buttons a.custom-link {
+      display: inline;
+      margin: 1em 0; }
+  .mobweb-cookie-consent-banner .buttons .separator:last-child {
+    display: none; }

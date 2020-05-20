@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @author    Louis Bataillard <info@mobweb.ch>
+ * @package    MobWeb_Cookieconsentbanner
+ * @copyright    Copyright (c) MobWeb GmbH (https://mobweb.ch)
+ */
+-->
+<config>
+    <modules>
+        <MobWeb_Cookieconsentbanner>
+            <version>0.0.1</version>
+        </MobWeb_Cookieconsentbanner>
+    </modules>
+    <global>
+        <blocks>
+            <mobweb_cookieconsentbanner>
+                <class>MobWeb_Cookieconsentbanner_Block</class>
+            </mobweb_cookieconsentbanner>
+        </blocks>
+        <helpers>
+            <mobweb_cookieconsentbanner>
+                <class>MobWeb_Cookieconsentbanner_Helper</class>
+            </mobweb_cookieconsentbanner>
+        </helpers>
+    </global>
+    <frontend>
+        <layout>
+            <updates>
+                <mobweb_cookieconsentbanner>
+                    <file>mobweb_cookieconsentbanner.xml</file>
+                </mobweb_cookieconsentbanner>
+            </updates>
+        </layout>
+        <routers>
+            <mobweb_cookieconsentbanner>
+                <use>standard</use>
+                <args>
+                    <module>MobWeb_Cookieconsentbanner</module>
+                    <frontName>mobweb_cookieconsentbanner</frontName>
+                </args>
+            </mobweb_cookieconsentbanner>
+        </routers>   
+    </frontend>
+    <default>
+        <web>
+            <mobweb_cookieconsentbanner>
+                <enabled>0</enabled>
+                <intro_title>Datenschutzeinstellungen</intro_title>
+                <intro_text>Wir nutzen Cookies auf unserer Website. Einige von ihnen sind essenziell, während andere uns helfen, diese Webseite und Ihre Erfahrung zu verbessern.</intro_text>
+                <checkbox_essential_label>Essenziell</checkbox_essential_label>
+                <checkbox_custom_1_label>Marketing</checkbox_custom_1_label>
+                <checkbox_custom_2_label>Externe Medien</checkbox_custom_2_label>
+                <button_accept_all_label>Alle akzeptieren</button_accept_all_label>
+                <button_save_label>Speichern</button_save_label>
+                <button_accept_essential_label>Nur essenzielle Cookies akzeptieren</button_accept_essential_label>
+                <custom_link_1_label>Datenschutzerklärung</custom_link_1_label>
+                <custom_link_1_url>/datenschutz</custom_link_1_url>
+                <custom_link_2_label>Impressum</custom_link_2_label>
+                <custom_link_2_url>/impressum</custom_link_2_url>
+            </mobweb_cookieconsentbanner>
+        </web>
+    </default>
+</config>
